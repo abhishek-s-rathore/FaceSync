@@ -1,0 +1,25 @@
+.bannerContainer{
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0 1 49%;
+    margin-top: 40px;
+}
+
+.imageContainer{
+      width: 40%;
+}
+
+.appLogo{
+    width: 100%;
+    object-fit: cover;
+}
+
+.appTitle{
+    font-family: "brush_regular";
+    font-size:200px;
+    color: var(--primaryy-font-color);
+    margin-top: -100px;
+}

@@ -1,0 +1,14 @@
+{
+  "short_name": "FaceSync",
+  "name": "FaceSync - Video Calling ",
+  "icons": [
+    {
+      "src": "FaceSyncLogo.svg",
+      "sizes": "128x128 64x64 32x32 24x24 16x16",
+      "type": "image/svg-xml"
+    }
+  ],
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

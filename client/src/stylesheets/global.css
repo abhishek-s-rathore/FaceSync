@@ -1,0 +1,16 @@
+:root {
+    --primary-bg-color: rgb(30,30,30);
+    --secondary-bg-color: rgb(10,10,10);
+    --tertiory-bg-color: rgb(10, 48, 52);
+    --primary-font-color: rgb(255, 255, 255);
+    --secondary-font-color: rgb(205, 205, 205);
+  }
+
+body{
+     background-color: var(--primary-bg-color);
+     color: var(--primary-font-color);
+     font-family:"nunito_regular";
+     box-sizing: border-box;
+     height: 100vh;
+     width: 100vw;
+}

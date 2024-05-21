@@ -1,0 +1,49 @@
+@font-face {
+    font-family: brush_regular;
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Brush/Brush-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: nunito_light;
+    font-weight: 300;
+    font-style: normal;
+    src: url('../fonts/Nunito/Nunito-Light.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: nunito_regular;
+    font-weight: 400;
+    font-style: normal;
+    src: url('../fonts/Nunito/Nunito-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: nunito_medium;
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/Nunito/Nunito-Medium.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: nunito_semibold;
+    font-weight: 600;
+    font-style: normal;
+    src: url('../fonts/Nunito/Nunito-SemiBold.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: nunito_bold;
+    font-weight: 700;
+    font-style: normal;
+    src: url('../fonts/Nunito/Nunito-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: nunito_black;
+    font-weight: 800;
+    font-style: normal;
+    src: url('../fonts/Nunito/Nunito-Black.ttf') format('truetype');
+    font-display: swap;
+}

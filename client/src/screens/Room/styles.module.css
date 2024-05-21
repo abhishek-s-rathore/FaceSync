@@ -1,0 +1,41 @@
+.remoteStreamContainer{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cite{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+   }
+}
+
+.myStreamContainer{
+    position: absolute;
+    bottom:0;
+    right: 0;
+    width: 300px;
+    height: 150px;
+    z-index: 0;
+    border: 1px solid rgb(70, 70, 70);
+    border-radius: 4px;
+    background-color: var(--secondary-bg-color);
+    box-sizing: border-box;
+
+    &:hover{
+        border: 1px solid var(--secondary-font-color);
+    }
+    cite{
+         position: absolute;
+         top: 5px;
+         left: 5px;
+    }
+}
+
