@@ -1,0 +1,187 @@
+.container{
+    height: 100%;
+    background-color: rgb(50,50,50);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container header, .container footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.container header{
+   flex: 0 1 5%;
+   width: 100%;
+   border-bottom: 1px solid rgba(125, 125, 125, .5);
+   border-radius: 8px;
+}
+
+.container header h1{
+    font-size: 18px;
+ }
+
+ .container header span{
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    &:hover{
+        cursor: pointer;
+        background-color: rgba(125, 125, 125, .5);
+    }
+ }
+
+.container main{
+    flex: 0 1 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.container main{
+    overflow-x: hidden;
+    overflow-y:scroll;
+  
+  }
+  
+  
+  .container main::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .container main::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  .container main::-webkit-scrollbar-thumb {
+    background: rgba(125,125, 125, .5);
+    border-radius: 10px;
+  }
+  
+  .container main::-webkit-scrollbar-thumb:hover {
+    background:rgb(200, 200, 200);
+    cursor: pointer;
+  }
+
+.myMessage{
+    display: flex;
+    justify-content:  flex-end;
+   width: 100%;
+}
+.myMessage > div{
+    background-color: rgba(105, 129, 132, 0.25);
+    border-radius: 8px;
+    padding: 8px;
+    max-width: 85%;
+    min-width: 25%;
+    & p{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    & cite{
+        color: rgb(0, 203, 203);
+        font-family: nunito_bold;
+        font-size: 14px;
+      }
+      & time{
+          color: rgba(150, 150, 150, 0.75);
+          font-family: nunito_semibold;
+          font-size: 13px;
+        }
+ }
+
+.peerMessage{
+width: 100%;
+display: flex;
+justify-content:  flex-start;
+}
+
+.peerMessage > div{
+    background-color: rgba(165, 190, 180, 0.25);
+    border-radius: 8px;
+    padding: 8px;
+    max-width: 85%;
+    min-width: 25%;
+    & p{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    & cite{
+      color: rgb(82, 221, 2);
+      font-family: nunito_bold;
+      font-size: 14px;
+    }
+    & time{
+        color: rgba(150, 150, 150, 0.75);
+        font-family: nunito_semibold;
+        font-size: 13px;
+      }
+}
+
+.container footer{
+    flex: 0 1 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top:  1px solid rgba(125, 125, 125, 0.5);
+    border-radius: 8px;
+}
+
+.container footer input{
+    flex: 0 1 95%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.container footer span{
+    flex: 0 1 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    &:hover{
+     cursor: pointer;
+    }
+}
+
+.container{
+    animation: fade-in 2s;
+  }
+
+@keyframes fade-in {
+    0%{
+     opacity: 0;
+       }
+       100%{
+      opacity: 1;
+       }
+  }

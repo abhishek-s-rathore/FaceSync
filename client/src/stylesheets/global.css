@@ -14,3 +14,191 @@ body{
      height: 100vh;
      width: 100vw;
 }
+
+.room-window{
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.chat-window{
+     flex: 0 1 25%;
+     height: 92%;
+     margin-top: -15px;
+}
+
+.stream-window{
+  flex: 0 1 74%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.display-chat-none{
+  display: none;
+}
+
+
+
+/* body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+#video-grid {
+  display: grid;
+  gap: 10px;
+  width: 98%;
+  height: 96%;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+/* Default grid settings for 1 participant */
+#video-grid.participants-1 {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* Grid settings for 2 participants */
+#video-grid.participants-2 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* Grid settings for 3 or 4 participants */
+#video-grid.participants-3, 
+#video-grid.participants-4 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* Grid settings for 5 or 6 participants */
+#video-grid.participants-5,
+#video-grid.participants-6 {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+/* Grid settings for 7 to 9 participants */
+#video-grid.participants-7,
+#video-grid.participants-8,
+#video-grid.participants-9 {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#video-grid.participants-10,
+#video-grid.participants-11,
+#video-grid.participants-12 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+#video-grid.participants-13,
+#video-grid.participants-14,
+#video-grid.participants-15,
+#video-grid.participants-16 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+/* Add more grid settings for larger numbers of participants if needed */
+
+.video-box {
+  background-color: #000;
+  position: relative;
+  overflow: hidden;
+  z-index: -1;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+#video-grid video {
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+  
+}
+
+
+
+/* Screen Sharing Layout */
+.screen-sharing-container{
+  box-sizing: border-box;
+  border: 1px solid red;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.peer-screen{
+  border: 1px solid green;
+  flex: 0 1 80%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.peer-videos{
+  border: 1px solid blue;
+  flex: 0 1 15%;
+  width: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 20px;
+  /* max-width: 800px; */
+  overflow: scroll;
+  /* overflow-y: hidden; */
+}
+
+.peer-videos .video-box{
+  display: inline-block;
+    /* flex: 0 1 20% */
+}
+
+
+.enlarge-screen-sharing-video{
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.enlarge-screen-sharing-video video{
+  width: 100vw;
+  height: 100vh;
+}
+
+.screen-resize-button{
+    position: absolute;
+     bottom: 10px;
+    right: 20px;
+}

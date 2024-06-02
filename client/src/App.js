@@ -14,7 +14,7 @@ function App() {
         <BrowserRouter>
           <Routes>
            <Route path="/" element={<HomeScreen />} />
-           <Route path="/meeting/:meetingId" element={<RoomPage />} />
+           <Route path="/room/:roomId" element={<RoomPage />} />
           </Routes>
         </BrowserRouter>
       </SocketProvider>
