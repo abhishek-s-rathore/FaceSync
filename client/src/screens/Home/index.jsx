@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useSocket } from "../../context/SocketProvider";
 import Banner from "../../components/Banner";
 import MeetingForm from "../../components/MeetingForm";
@@ -7,6 +7,8 @@ import styles from "./styles.module.css"
 
 const  HomeScreen = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const {state} = location;
   const {socket} = useSocket();
 
   const handleSubmit= async (name, email, roomId)=>{
@@ -25,14 +27,16 @@ const  HomeScreen = () => {
   useEffect(() => {
     socket.on("room-created", enterRoom);
     return () => {
-      socket.off("room-created", enterRoom);
+      socket.off("room-created");
     };
   }, [socket, enterRoom]);
+
+  // console.log(state)
 
   return (
     <div className={styles.container}>
       <Banner/>
-      <MeetingForm handleSubmit={handleSubmit}/>
+      <MeetingForm handleSubmit={handleSubmit} roomId={state?.roomId}/>
     </div>
   );
 };

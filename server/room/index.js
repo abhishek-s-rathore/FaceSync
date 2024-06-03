@@ -31,9 +31,8 @@ const roomHandler = (socket)=>{
             }else{
                 rooms[roomId]?.push({name, email, peerId})
                 socket.emit('get-messages', chats[roomId])
-
                 socket.join(roomId)
-                socket.to(roomId).emit("peer-joined", {peerId})
+                socket.to(roomId).emit("peer-joined", {peerId, name,email})
                 socket.emit('get-peers', { 
                     roomId, 
                     peers:rooms[roomId]
@@ -65,9 +64,6 @@ const roomHandler = (socket)=>{
         console.log(roomId, messageData)
         socket.to(roomId).emit('add-message', messageData)
     }
-
-
-
    
     socket.on("create-room", createRoom)
     socket.on("join-room", joinRoom )

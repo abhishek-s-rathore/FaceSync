@@ -1,12 +1,18 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import styles from "./styles.module.css";
 
-export default function MeetingForm({handleSubmit}) {
+export default function MeetingForm({handleSubmit, roomId}) {
   const [tab, setTab] = useState('create-room');
 
   const handleTab = (type)=>{
      setTab(type);
   }
+
+  useEffect(()=>{
+    if(roomId){
+      setTab('join-room')
+    }
+  }, [roomId]);
 
   return (
     <div className={styles.formContainer}>
@@ -18,7 +24,7 @@ export default function MeetingForm({handleSubmit}) {
         tab === 'create-room' && <CreateMeetingForm handleSubmit={handleSubmit}/>
       }
         {
-        tab === 'join-room' &&  <JoinMeetingForm handleSubmit={handleSubmit}/>
+        tab === 'join-room' &&  <JoinMeetingForm handleSubmit={handleSubmit} roomIdFromState={roomId}/>
       }
     </div>
   )
@@ -55,10 +61,16 @@ const CreateMeetingForm = ({handleSubmit})=>{
   )
 }
 
-const JoinMeetingForm = ({handleSubmit})=>{
+const JoinMeetingForm = ({handleSubmit, roomIdFromState})=>{
   const[name, setName] = useState('');
   const[email, setEmail] = useState('');
   const[roomId, setRoomId] = useState('');
+
+  useEffect(()=>{
+    if(roomIdFromState){
+      setRoomId(roomIdFromState)
+    }
+  }, [roomIdFromState])
 
   const handleInput = (event)=>{
     const {name , value} = event.target;

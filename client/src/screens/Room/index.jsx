@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback, useState, useRef, useReducer } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import ReactPlayer from "react-player";
 import peer from "../../service/peer";
 import ControlPannel from "../../components/ControlPanel";
@@ -32,19 +32,22 @@ const RoomPage = () => {
   const {socket, me} = useSocket();
   const param = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
   const videoRef= useRef();
   const screenRef= useRef();
   const {state} = location;
   const roomId = param?.roomId;
   const peerId = me?._id;
 
+  // console.log(location.state, roomId,'state')
+
   const joinRoom = useCallback((roomId, peerId, state)=>{
-    if(peerId){
-      if(state === null ){
-        socket.emit("join-room", {name:"Anonymous", email:"", roomId, peerId})
-      }else{
-        socket.emit("join-room", {name: state.name, email: state.email, roomId, peerId})
+      if(state === null){
+        console.log(roomId)
+        navigate('/', {state:{roomId}})
       }
+    if(peerId && state !== null){
+        socket.emit("join-room", {name: state.name, email: state.email, roomId, peerId})
     }
   }, [roomId, peerId, state]);
   
@@ -118,7 +121,7 @@ const handlePeerLeft = useCallback(({roomId, peerId})=>{
   dispatch(removePeer(peerId))
 })
 
-const  handlePeerJoined = useCallback(({ peerId})=>{
+const  handlePeerJoined = useCallback(({ peerId, name , email})=>{
      const call = me.call(peerId, myStream);
           call?.on("stream", (peerStream)=>{
             dispatch(addPeer(peerId, peerStream));
